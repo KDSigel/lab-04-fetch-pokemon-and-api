@@ -42,7 +42,7 @@
 } */
 
 @keyframes example {
-  from {background-color: deepskyblue;}
+  from {background-color: rgba(0, 191, 255, 0);}
   to {background-color: deeppink;}
 }
 
@@ -52,9 +52,9 @@
 }
 
 @keyframes example2 {
-  0% {background-color: deepskyblue;}
+  0% {background-color: rgba(0, 191, 255, 0);}
   50% {background-color: deeppink;}
-  100% {background-color: deepskyblue;}
+  100% {background-color: rgba(0, 191, 255, 0);}
 }
 
 
@@ -167,7 +167,7 @@ li img:hover {
 }
 
 li img {
-  width: 75%;
+  width: 85%;
   animation-name: example3;
   animation-duration: 4s;
   background-color: deeppink;

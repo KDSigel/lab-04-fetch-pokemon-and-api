@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PokeList from './PokeList'
 import request from 'superagent'
+import Dropdown from './Dropdown'
 
 export default class SearchPage extends Component {
 
@@ -46,10 +47,19 @@ fetchStuff = async () => {
                         <input onChange={this.searchData} />
                         <button>Search by name</button>
                     </form>
-                    <select onChange={this.changeSortOrder}>
+                    {/* <select onChange={this.changeSortOrder}>
                         <option value='asc'>sort ascending</option>
                         <option value='desc'>sort descending</option>
-                    </select>
+                    </select> */}
+                    <Dropdown 
+                    handleChange={this.changeSortOrder}
+                    options={[
+                        {value:'asc', 
+                        display:'sort ascending'},
+                        {value:'desc', 
+                        display:'sort descending'},
+                    ]}
+                    />
                 </section>
                 <ul>{
                 this.state.isLoading
