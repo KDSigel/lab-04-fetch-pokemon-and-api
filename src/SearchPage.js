@@ -37,11 +37,11 @@ fetchStuff = async () => {
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <input onChange={this.searchData} />
+                <button>search</button>
                 <select onChange={this.changeSortOrder}>
-                    <option value='asc'>asc</option>
-                    <option value='desc'>desc</option>
+                    <option value='asc'>sort ascending</option>
+                    <option value='desc'>sort descending</option>
                 </select>
-                <button>button</button>
                 </form>
                 <PokeList pokes={this.state.pokes}
                 />

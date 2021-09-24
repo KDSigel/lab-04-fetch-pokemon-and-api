@@ -6,7 +6,7 @@ export default class PokeItem extends Component {
             <li>
                  <img src={this.props.url_image} alt={this.props.pokemon}/>
                  <div>{this.props.pokemon}</div>
-                 <div>{this.props.egg_group_1}</div>
+                 <div>Breeds with other{this.props.egg_group_1}</div>
             </li>
         )
     }
