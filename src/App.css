@@ -57,16 +57,79 @@
   100% {background-color: deepskyblue;}
 }
 
+
+* { box-sizing: border-box;
+}
+
 body {
   background-color: deepskyblue;
 }
 
-form {
-  margin: 3rem;
+#root {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
 }
 
-form > * {
+.left-search-nav {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-content: center;
+  padding: .8rem;
+}
+
+h3 {
+  text-align: center;
+  color: aliceblue;
+  margin: 0;
+}
+
+input {
+  cursor: text;
+  color: deeppink;
+  font-weight: bold;
+}
+
+button {
+  background-color: deeppink;
+  color: aliceblue;
+  border-radius: .2rem;
+  border: solid 2px rgba(0, 0, 0, 0);
+  font-weight: bold;
+  padding: .1rem;
+}
+
+button:hover {
+  cursor:pointer;
+  box-shadow: fuchsia 1px 1px 2px;
+}
+
+select {
+  width:fit-content;
+  align-self: center;
+  background-color: deeppink;
+  color: aliceblue;
+  border-radius: .2rem;
+  border: solid 2px rgba(0, 0, 0, 0);
+  font-weight: bold;
+  padding: .1rem;
+}
+
+select:hover {
+  cursor: pointer;
+  box-shadow: fuchsia 1px 1px 2px;
+}
+
+form {
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+form * {
+  margin: .5rem;
 }
 
 ul {
@@ -99,7 +162,7 @@ li:hover {
 li img {
   width: 75%;
   animation-name: example3;
-  animation-duration: 8s;
+  animation-duration: 4s;
 }
 
 li div:nth-child(2) {

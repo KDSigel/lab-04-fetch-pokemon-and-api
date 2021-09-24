@@ -6,9 +6,9 @@ import SearchPage from './SearchPage.js'
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <SearchPage />
-      </div>
+      </>
     )
   }
 }

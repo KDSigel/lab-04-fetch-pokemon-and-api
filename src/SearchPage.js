@@ -10,8 +10,9 @@ state = {
     pokes: []
 }
 
-changeSortOrder = (e) => {
-this.setState({ sortOrder: e.target.value })
+changeSortOrder = async (e) => {
+    await this.setState({ sortOrder: e.target.value })
+    this.fetchStuff()
 }
 
 handleSubmit = async (e) => {
@@ -34,18 +35,21 @@ fetchStuff = async () => {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <input onChange={this.searchData} />
-                <button>search</button>
-                <select onChange={this.changeSortOrder}>
-                    <option value='asc'>sort ascending</option>
-                    <option value='desc'>sort descending</option>
-                </select>
-                </form>
+            <>
+                <section className="left-search-nav">
+                    <h3>Find your Pokemon</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <input onChange={this.searchData} />
+                        <button>Search by name</button>
+                    </form>
+                    <select onChange={this.changeSortOrder}>
+                        <option value='asc'>sort ascending</option>
+                        <option value='desc'>sort descending</option>
+                    </select>
+                </section>
                 <PokeList pokes={this.state.pokes}
                 />
-            </div>
+            </>
         )
     }
 }
