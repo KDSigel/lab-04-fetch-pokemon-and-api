@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PokeList from './PokeList'
 import request from 'superagent'
 import Dropdown from './Dropdown'
+import Legend from './Legend'
 
 export default class SearchPage extends Component {
 
@@ -47,10 +48,6 @@ fetchStuff = async () => {
                         <input onChange={this.searchData} />
                         <button>Search by name</button>
                     </form>
-                    {/* <select onChange={this.changeSortOrder}>
-                        <option value='asc'>sort ascending</option>
-                        <option value='desc'>sort descending</option>
-                    </select> */}
                     <Dropdown 
                     handleChange={this.changeSortOrder}
                     options={[
@@ -60,6 +57,7 @@ fetchStuff = async () => {
                         display:'sort descending'},
                     ]}
                     />
+                    <Legend />
                 </section>
                 <ul>{
                 this.state.isLoading

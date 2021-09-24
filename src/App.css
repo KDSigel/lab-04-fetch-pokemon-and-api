@@ -88,12 +88,13 @@ input {
   cursor: text;
   color: deeppink;
   font-weight: bold;
+  border-radius: .3rem;
 }
 
 button {
   background-color: deeppink;
   color: aliceblue;
-  border-radius: .2rem;
+  border-radius: .3rem;
   border: solid 2px rgba(0, 0, 0, 0);
   font-weight: bold;
   padding: .1rem;
@@ -109,7 +110,7 @@ select {
   align-self: center;
   background-color: deeppink;
   color: aliceblue;
-  border-radius: .2rem;
+  border-radius: .3rem;
   border: solid 2px rgba(0, 0, 0, 0);
   font-weight: bold;
   padding: .1rem;
@@ -185,12 +186,85 @@ li div:nth-child(2) {
   text-shadow: rgba(0, 94, 126, 0.488) 0px 0px 4px;
 }
 
-li div:nth-child(3) {
-  font-size: .6vw;
-  font-style: italic;
-  font-weight: bold;
-  text-shadow: rgba(0, 94, 126, 0.488) 0px 0px 3px;
+.attributes {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.attributes span {
+  margin: 1px 3px 1px 3px;
+  font-size: .6vw;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+}
+
+.attributes-legend {
+margin-top: 3rem;
+display: flex;
+flex-direction: column;
+}
+
+.attributes-legend span {
+  margin: 2px 4px 2px 4px;
+  font-size: .8vw;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+  width: fit-content;
+  color: white;
+  align-self: center;
+  margin: .08rem;
+}
+
+.attributes-legend span:nth-child(3) {
+  color: darkslategray;
+}
+
+.attributes-legend span:nth-child(4) {
+  color: darkslategray;
+}
+
+.attributes-height {
+  background-color: #704E2E;
+}
+
+.attributes-weight {
+  background-color: #79745C;
+}
+
+.attributes-attack {
+  background-color: #E6F8B2;
+  color: darkslategray;
+}
+
+.attributes-defense {
+  background-color: #CDE77F;
+  color: darkslategray;
+}
+
+.attributes-weight {
+  background-color: #709176;
+}
+
+.attributes-hp {
+  background-color: #D34F73;
+}
+
+.attributes-speed {
+  background-color: #ED9390;
+}
+
+.attributes-ability {
+  background-color: #F374AE;
+}
+
+.attributes-egggroup {
+  background-color: #885A89;
+}
+
+.attributes-shape {
+  background-color: #552244;
 }
 
 ul img {
