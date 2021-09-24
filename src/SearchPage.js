@@ -7,7 +7,8 @@ export default class SearchPage extends Component {
 state = {
     sortOrder: '',
     query: '',
-    pokes: []
+    pokes: [],
+    isLoading: false
 }
 
 changeSortOrder = async (e) => {
@@ -29,8 +30,11 @@ componentDidMount = async () => {
 }
 
 fetchStuff = async () => {
-    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}`)
-    this.setState({ pokes: data.body.results })
+    this.setState({isLoading: true})
+    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}&perPage=400`)
+    this.setState({ 
+        pokes: data.body.results,
+        isLoading: false})
 }
 
     render() {
@@ -47,8 +51,13 @@ fetchStuff = async () => {
                         <option value='desc'>sort descending</option>
                     </select>
                 </section>
-                <PokeList pokes={this.state.pokes}
+                <ul>{
+                this.state.isLoading
+                ? <img src='3753264_170x100.gif' alt='page loading' />
+                : <PokeList pokes={this.state.pokes}
                 />
+                }
+                </ul>
             </>
         )
     }

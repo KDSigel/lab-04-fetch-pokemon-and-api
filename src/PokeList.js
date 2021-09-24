@@ -4,7 +4,7 @@ import PokeItem from './PokeItem'
 export default class PokeList extends Component {
     render() {
         return (
-            <ul>
+            <>
                 {this.props.pokes.map((poke) => {
                     return (
                 <PokeItem 
@@ -16,7 +16,7 @@ export default class PokeList extends Component {
                     )
                 }
                 )}
-            </ul>
+            </>
         )
     }
 }
