@@ -42,8 +42,13 @@
 } */
 
 @keyframes example {
-  from {background-color: deeppink;}
-  to {background-color: deepskyblue;}
+  from {background-color: deepskyblue;}
+  to {background-color: deeppink;}
+}
+
+@keyframes example3 {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @keyframes example2 {
@@ -81,7 +86,7 @@ border: rgb(20, 130, 255) 1px solid;
 border-radius: 5%;
 padding: 1rem;
 animation-name: example;
-animation-duration: 4s;
+animation-duration: 8s;
 }
 
 li:hover {
@@ -93,6 +98,8 @@ li:hover {
 
 li img {
   width: 75%;
+  animation-name: example3;
+  animation-duration: 8s;
 }
 
 li div:nth-child(2) {
