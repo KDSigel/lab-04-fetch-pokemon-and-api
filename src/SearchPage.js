@@ -11,7 +11,8 @@ state = {
     sortOrder: '',
     query: '',
     pokes: [],
-    isLoading: false
+    isLoading: false,
+    page: 1
 }
 
 changeSortOrder = async (e) => {
@@ -34,7 +35,7 @@ componentDidMount = async () => {
 
 fetchStuff = async () => {
     this.setState({isLoading: true})
-    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}&perPage=400`)
+    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}page=${this.state.page}&perPage=50`)
     this.setState({ 
         pokes: data.body.results,
         isLoading: false})
