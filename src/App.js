@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchPage from './SearchPage';
-import DetailPage from './DetailPage';
+import PokemonDetail from './PokemonDetail';
 import HomePage from './HomePage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,14 +17,14 @@ export default class App extends Component {
       render={(routerProps) => <HomePage {...routerProps} />} 
     />
   <Route 
-      path="/pokemon" 
+      path="/Pokemon" 
       exact
       render={(routerProps) => <SearchPage {...routerProps} />} 
     />        
   <Route 
-      path="/pokemon/:pokeid" 
+      path="/Pokemon/:_id"
       exact
-      render={(routerProps) => <DetailPage {...routerProps} />} 
+      render={(routerProps) => <PokemonDetail {...routerProps} />} 
     />                  
   </Switch>
 </Router>

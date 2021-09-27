@@ -3,6 +3,7 @@ import PokeList from './PokeList'
 import request from 'superagent'
 import Dropdown from './Dropdown'
 import Legend from './Legend'
+import Header from './Header'
 
 export default class SearchPage extends Component {
 
@@ -43,6 +44,7 @@ fetchStuff = async () => {
         return (
             <>
                 <section className="left-search-nav">
+                    <Header />
                     <h3>Find your Pokemon</h3>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.searchData} />
