@@ -15,6 +15,16 @@ state = {
     page: 1
 }
 
+nextPage = async () => {
+    await this.setState({page: this.state.page + 1})
+    this.fetchStuff()
+}
+
+previousPage = async () => {
+    await this.setState({page: this.state.page - 1})
+    this.fetchStuff()
+}
+
 changeSortOrder = async (e) => {
     await this.setState({ sortOrder: e.target.value })
     this.fetchStuff()
@@ -35,7 +45,7 @@ componentDidMount = async () => {
 
 fetchStuff = async () => {
     this.setState({isLoading: true})
-    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}page=${this.state.page}&perPage=50`)
+    const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortOrder}&page=${this.state.page}&perPage=50`)
     this.setState({ 
         pokes: data.body.results,
         isLoading: false})
@@ -46,6 +56,10 @@ fetchStuff = async () => {
             <>
                 <section className="left-search-nav">
                     <Header />
+
+                    <button onClick={this.previousPage}>previous page</button>
+                    <button onClick={this.nextPage}>next page</button>
+
                     <h3>Find your Pokemon</h3>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.searchData} />
