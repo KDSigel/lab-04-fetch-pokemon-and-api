@@ -56,9 +56,9 @@ fetchStuff = async () => {
             <>
                 <section className="left-search-nav">
                     <Header />
-
-                    <button onClick={this.previousPage}>previous page</button>
-                    <button onClick={this.nextPage}>next page</button>
+                    <div>On page number {this.state.page}</div>
+                    <button onClick={this.previousPage} disabled={this.state.page < 2 }>previous page</button>
+                    <button onClick={this.nextPage} disabled={this.state.pokes.length < 50}>next page</button>
 
                     <h3>Find your Pokemon</h3>
                     <form onSubmit={this.handleSubmit}>

@@ -29,7 +29,7 @@ export default class PokemonDetail extends Component {
             <>
             <Header />
                 {this.state.isLoading
-                    ? <img src='3753264_170x100.gif' alt='page loading' />
+                    ? <h2>LOADING</h2>
                     : <div className='individualPoke'>
                         <DetailPokeItem {...this.state.pokemon} />
                     </div>
