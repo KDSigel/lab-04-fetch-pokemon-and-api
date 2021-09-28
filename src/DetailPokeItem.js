@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
-export default class PokeItem extends Component {
+export default class DetailPokeItem extends Component {
     render() {
         return (
-            <li>
-                <Link to={`/Pokemon/${this.props._id}`}>
+            <>
                  <img src={this.props.url_image} alt={this.props.pokemon}/>
                  <div>{this.props.pokemon}</div>
                  <div className='attributes'>
@@ -19,8 +17,7 @@ export default class PokeItem extends Component {
                  <span className='attributes-egggroup'>{this.props.egg_group_1}</span>
                  <span className='attributes-shape'>{this.props.shape}</span>
                  </div>
-                 </Link>
-            </li>
+            </>
         )
     }
 }
