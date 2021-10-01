@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchPage from './SearchPage';
-import PokemonDetail from './PokemonDetail';
-import HomePage from './HomePage';
+import SearchPage from './ListPage/ListPage.js';
+import PokemonDetail from './DetailPage/DetailPage.js';
+import HomePage from './HomePage/HomePage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default class App extends Component {

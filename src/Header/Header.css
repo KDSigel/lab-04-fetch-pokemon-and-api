@@ -1,0 +1,23 @@
+.navigation-links a {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: deepskyblue;
+}
+
+.navigation-links {
+    margin-bottom: 30px;
+}
+
+.activelink {
+    color: deepskyblue !important;
+    background-color: deepskyblue !important;
+}
+
+.navigation-links a:hover {
+    box-shadow: fuchsia 1px 1px 2px;
+}
