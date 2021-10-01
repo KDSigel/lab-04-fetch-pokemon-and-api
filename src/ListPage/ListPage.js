@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import PokeList from './PokeList'
+import PokeList from '../PokeList'
 import request from 'superagent'
 import Dropdown from './Dropdown'
 import Legend from './Legend'
-import Header from './Header'
+import Header from '../Header/Header';
+import './ListPage.css';
 
 export default class SearchPage extends Component {
 
@@ -55,15 +56,15 @@ fetchStuff = async () => {
         return (
             <>
                 <section className="left-search-nav">
-                    <Header />
-                    <div>On page number {this.state.page}</div>
-                    <button onClick={this.previousPage} disabled={this.state.page < 2 }>previous page</button>
-                    <button onClick={this.nextPage} disabled={this.state.pokes.length < 50}>next page</button>
-
+                <Header />
+                    <div className='page-button-contain'>
+                        <button className='page-button' onClick={this.previousPage} disabled={this.state.page < 2 }>Page {this.state.page - 1}</button>
+                        <button className='page-button' onClick={this.nextPage} disabled={this.state.pokes.length < 50}>Page {this.state.page + 1}</button>
+                    </div>
                     <h3>Find your Pokemon</h3>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.searchData} />
-                        <button>Search by name</button>
+                        <button className='search-button'>Search by name</button>
                     </form>
                     <Dropdown 
                     handleChange={this.changeSortOrder}

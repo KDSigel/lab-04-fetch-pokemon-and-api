@@ -95,6 +95,7 @@ h3 {
   text-align: center;
   color: aliceblue;
   margin-top: 100px;
+  margin-bottom: 0;
 }
 
 input {
@@ -102,18 +103,23 @@ input {
   color: deeppink;
   font-weight: bold;
   border-radius: .3rem;
+  text-align: center;
+  width: 200px;
+  align-self: center;
 }
 
-button {
+.search-button {
   background-color: deeppink;
   color: aliceblue;
   border-radius: .3rem;
   border: solid 2px rgba(0, 0, 0, 0);
   font-weight: bold;
   padding: .1rem;
+  width: 200px;
+  align-self: center;
 }
 
-button:hover {
+.search-button:hover {
   cursor:pointer;
   box-shadow: fuchsia 1px 1px 2px;
 }
@@ -122,10 +128,10 @@ button:disabled {
   opacity: .5;
 }
 
-select {
-  width:fit-content;
+.dropdown {
+  width: 200px;
   align-self: center;
-  background-color: deeppink;
+  background-color: rgb(0, 97, 130);
   color: aliceblue;
   border-radius: .3rem;
   border: solid 2px rgba(0, 0, 0, 0);
@@ -133,7 +139,7 @@ select {
   padding: .1rem;
 }
 
-select:hover {
+.dropdown:hover {
   cursor: pointer;
   box-shadow: fuchsia 1px 1px 2px;
 }
